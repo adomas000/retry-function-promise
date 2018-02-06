@@ -1,13 +1,13 @@
 {
   "name": "retry-function-promise",
   "version": "1.0.0",
-  "description": "\"Nothing yer\"",
+  "description": "\"Nothing yet\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "https://github.com/adomas000/retry-function-promise.git"
+    "https://github.com/adomas000/retry-function-promise"
   ],
   "author": "Adomas Griskelis",
   "license": "ISC"
