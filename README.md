@@ -1,34 +1,36 @@
 # retry-function-promise
 
-## get module
+## Get module
 
 ```js
 var retryFunctionPromise = require("retry-function-promise");
 ```
-## parameters to retryFunctionPromise()
+## Parameters to retryFunctionPromise(count, interval, function, args)
 
-* #1 - how many times to retry 
-* #2 - how much time to wait between retries
-* #3 - function you want to execute or Array [this, function] if nested/inner e.g. A.B.C() -> [A.B, A.B.C()];
-* #4 - arguments to pass to function you want to execute number of times
+* #count    - how many times to retry 
+* #interval - how much time to wait between retries
+* #function - function you want to execute or Array [this, function] if nested/inner e.g. A.B.C() -> [A.B, A.B.C()];
+* #args     - arguments to pass to function you want to execute number of times
+
+###### In the future will probably add overloading
 
 ## Simple function example
 ```js
-    var cnt = 0;
-    //function you wish to repeat until it doesnt throw error
-    function regularFunction(arg1, arg2){
-        cnt++;
-        if(cnt==3) return true;
-        else throw "Error";
-    }
+var cnt = 0;
+//function you wish to repeat until it doesnt throw error
+function regularFunction(arg1, arg2){
+    cnt++;
+    if(cnt==3) return true;
+    else throw "Error";
+}
 
-    retryFunctionPromise(5, 500, regularFunction, ["firstArgument",{second:"argument"}])
-        .then((success)=>{
-            console.log("Function completed execution without any errors");
-        })
-        .catch((error)=>{
-            console.error("All tries were unsuccesfull: " + error);
-        })
+retryFunctionPromise(5, 500, regularFunction, ["firstArgument",{second:"argument"}])
+    .then((success)=>{
+        console.log("Function completed execution without any errors");
+    })
+    .catch((error)=>{
+        console.error("All tries were unsuccesfull: " + error);
+    })
 ```
 ## Also works with promises
 
