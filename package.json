@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "https://github.com/adomas000/retry-function-promise"
+    "github.com/adomas000/retry-function-promise"
   ],
   "author": "Adomas Griskelis",
   "license": "ISC"
